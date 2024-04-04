@@ -24,24 +24,30 @@ The Iris dataset, traditionally a multi-class dataset, is modified to serve as a
 A neural network is initialized with random weights and trained over a specified number of epochs. The training involves the following steps:
 
 - Initialization: Weights are initialized for input, hidden, and output layers according to the provided architecture.
-Forward Propagation (forwardPropagation): The network processes the input by moving it through the layers, applying weights, and using ReLU activation functions for hidden layers and a sigmoid function for the output layer.
-Error Computation (errorPerSample): For each training sample, the error is computed using the log loss error function.
-Backpropagation (backPropagation): The error is backpropagated through the network to compute gradients with respect to the weights.
-Weight Update (updateWeights): Weights are updated using the computed gradients and a learning rate (alpha).
+- Forward Propagation (forwardPropagation): The network processes the input by moving it through the layers, applying weights, and using ReLU activation functions for hidden layers and a sigmoid function for the output layer.
+- Error Computation (errorPerSample): For each training sample, the error is computed using the log loss error function.
+- Backpropagation (backPropagation): The error is backpropagated through the network to compute gradients with respect to the weights.
+- Weight Update (updateWeights): Weights are updated using the computed gradients and a learning rate (alpha).
+
 After each epoch, the average error across all samples is recorded.
 
-Activation Functions
-ReLU (activation, derivativeActivation): The ReLU function is applied to neuron activations, and its derivative is calculated.
-Sigmoid (outputf, derivativeOutput): The sigmoid function is used at the output layer to map activations to probabilities, and its derivative is calculated for backpropagation.
-Error Functions
-Log Loss Error (errorf, derivativeError): The error function and its derivative for a binary classification are implemented.
-Prediction and Evaluation
-Prediction (pred): The function predicts class labels for the test data using the trained weights.
-Confusion Matrix (confMatrix): A confusion matrix is generated to evaluate the predictions against the actual labels.
-Error Visualization
-Error Plot (plotErr): The function plots the training error as it decreases over epochs.
-Scikit-Learn MLPClassifier (test_SciKit)
+### Activation Functions
+- ReLU (activation, derivativeActivation): The ReLU function is applied to neuron activations, and its derivative is calculated.
+- Sigmoid (outputf, derivativeOutput): The sigmoid function is used at the output layer to map activations to probabilities, and its derivative is calculated for backpropagation.
+
+### Error Functions
+- Log Loss Error (errorf, derivativeError): The error function and its derivative for a binary classification are implemented.
+### Prediction and Evaluation
+- Prediction (pred): The function predicts class labels for the test data using the trained weights.
+- Confusion Matrix (confMatrix): A confusion matrix is generated to evaluate the predictions against the actual labels.
+### Error Visualization
+- Error Plot (plotErr): The function plots the training error as it decreases over epochs.
+- Scikit-Learn MLPClassifier (test_SciKit)
 
 The program also demonstrates the usage of Scikit-learn's MLPClassifier to train a neural network. It is trained on the same dataset, and the performance is evaluated using a confusion matrix and accuracy scores for both training and testing sets.
+
+### How to Run
+
+Make sure to have Python installed with the following packages: numpy, seaborn, matplotlib, scikit-learn. The program can be run as a script. The custom neural network will train, and its performance will be visualized alongside the performance of the Scikit-learn MLPClassifier.
 
 
