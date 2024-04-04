@@ -48,6 +48,47 @@ The program also demonstrates the usage of Scikit-learn's MLPClassifier to train
 
 ### How to Run
 
-Make sure to have Python installed with the following packages: numpy, seaborn, matplotlib, scikit-learn. The program can be run as a script. The custom neural network will train, and its performance will be visualized alongside the performance of the Scikit-learn MLPClassifier.
+Make sure to have Python installed with the following packages: numpy, seaborn, matplotlib, scikit-learn. The program can be run as a script. The custom neural network will train, and its performance will be visualized alongside the performance of the Scikit-learn MLPClassifier. Conversly, upload the NeuralNetwork-2.ipynb notebook onto Google Colab to run the program.
+
+# 3. Fully Connected Neural Network (FNN)
+
+## Overview
+
+The Python script trains a neural network on the notMNIST dataset and includes functionality for experimenting with different learning rates to compare their effects on training. It performs the following steps:
+
+- Data Loading: Custom function loadData imports the dataset, normalizes the images, and splits it into training, validation, and test sets.
+- Dataset Class: notMNIST is a subclass of torch.utils.data.Dataset tailored to handle the notMNIST dataset.
+- Neural Network Definition: FNN is a torch.nn.Module subclass defining a feedforward neural network with three linear layers.
+- Training and Evaluation: Functions train and get_accuracy perform training and evaluate the model, respectively.
+- Experimentation: Function experiment runs the training process with specified hyperparameters and returns the trained model and accuracy history.
+- Comparison of Learning Rates: Function compare_lr runs experiments for different learning rates and plots their training and test accuracies.
+## Detailed Description
+
+### Data Preprocessing
+- The data is loaded from an '.npz' file, shuffled, and split into 10,000 training samples, 6,000 validation samples, and the remaining samples for testing.
+- The pixel values are scaled to the [0, 1] range for model input.
+### Neural Network Model (FNN Class)
+- The FNN class initializes a three-layer neural network with ReLU activations for hidden layers.
+- It accepts input images of size 28x28, flattens them, and processes through two hidden layers before outputting to 10 classes corresponding to the 10 different letters.
+### Training Procedure
+- The train function executes the forward pass, loss computation, backpropagation, and optimizer steps for each epoch and batch.
+- Model performance (accuracy) on the training, validation, and test sets is calculated after each epoch.
+- Cross-entropy loss and AdamW optimizer are used for training.
+### Experiment and Learning Rate Comparison
+- ' experiment ' function performs a full training and evaluation cycle using the specified learning rate and the number of epochs.
+compare_lr runs multiple experiments for different learning rates, records the accuracy history, and visualizes the results, allowing comparison to see how learning rate affects the learning process.
+### Running the Script
+- The main execution calls compare_lr with a list of learning rates and runs for a default of 50 epochs.
+- Training progress is printed out for each learning rate, and a plot is generated to compare train and test accuracies for each learning rate.
+### Visualization
+- After training, accuracy trends are plotted to compare the impact of different learning rates on the model's performance.
+<img width="722" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/c0b97e2f-1e93-408f-8836-25951141dfb2">
+<img width="717" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/dbcc0610-d368-4d93-b0a6-480ff59b1ff9">
+<img width="729" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/864202d0-9967-4909-9532-b8fc0e66dbf1">
+<img width="730" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/4b0a08db-ced7-47e4-8fe4-353ff161bc52">
+
+
+
+
 
 
