@@ -87,6 +87,9 @@ compare_lr runs multiple experiments for different learning rates, records the a
 <img width="729" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/864202d0-9967-4909-9532-b8fc0e66dbf1">
 <img width="730" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/4b0a08db-ced7-47e4-8fe4-353ff161bc52">
 
+# 4. K-Means and Mixture of Gaussian Models (MoG)
+TBA
+
 
 
 
