@@ -14,16 +14,16 @@ The implementation of Linear Regression using scikit-learn in Python will detail
 
 # 2. Feed Forward Neural Network
 
-Data Preparation
+## Data Preparation
 
 The Iris dataset, traditionally a multi-class dataset, is modified to serve as a binary classification problem. Class labels are transformed such that the class '1' is labeled as '-1' and class '2' as '1', while class '0' is discarded. The data is then split into training and test datasets with an 80/20 ratio. This preprocessed data serves as the input for both the custom neural network and the Scikit-learn MLPClassifier.
 
-Neural Network Implementation
+## Neural Network Implementation
 
-Training (fit_NeuralNetwork)
+### Training (fit_NeuralNetwork)
 A neural network is initialized with random weights and trained over a specified number of epochs. The training involves the following steps:
 
-Initialization: Weights are initialized for input, hidden, and output layers according to the provided architecture.
+- Initialization: Weights are initialized for input, hidden, and output layers according to the provided architecture.
 Forward Propagation (forwardPropagation): The network processes the input by moving it through the layers, applying weights, and using ReLU activation functions for hidden layers and a sigmoid function for the output layer.
 Error Computation (errorPerSample): For each training sample, the error is computed using the log loss error function.
 Backpropagation (backPropagation): The error is backpropagated through the network to compute gradients with respect to the weights.
