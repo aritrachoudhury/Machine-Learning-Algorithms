@@ -98,9 +98,6 @@ This project demonstrates the KMeans clustering process using both the PyTorch f
 - Scikit-learn Clustering Implementation: Utilizes Scikit-learn's KMeans class to perform clustering, serving as a baseline comparison to the PyTorch implementation.
 - Evaluation and Visualization: Both implementations include functions to evaluate the clustering performance and visualize the results, making it easier to analyze and compare outcomes.
 
-### Dataset
-Before running the code, make sure you have a 2D dataset named data2D.npy in your working directory. This dataset is used for both training and validating the clustering models. If you wish to use a different dataset, adjust the load_data function accordingly.
-
 ### Implementation Details
 
 #### PyTorch KMeans
@@ -109,6 +106,29 @@ The PyTorch implementation (train_kmean_torch) involves manually defining the cl
 #### Scikit-learn KMeans
 The Scikit-learn version uses the library's KMeans class, which abstracts away the details of initializing centers, assigning clusters, and updating centers. It's a simple yet powerful tool for quick clustering analysis.
 
+## Gaussian Mixture Models Overview
+
+Presents a comprehensive implementation of Gaussian Mixture Models (GMM) using PyTorch. The code is designed to offer insights into how Gaussian Mixture Models can be implemented and optimized using gradient descent. By leveraging PyTorch's automatic differentiation, this implementation allows for an exploration of GMMs beyond the conventional scope provided by libraries like Scikit-learn. The project showcases how to initialize model parameters, compute the Expectation step in GMMs, and perform clustering on 2D datasets.
+
+### Features
+
+- PyTorch-Based Implementation: Utilizes PyTorch for all aspects of GMM training, including parameter initialization, probability density function calculations, and optimization.
+- Custom Initialization Options: Supports initializing GMM parameters randomly or using KMeans clustering for potentially improved convergence.
+- Comprehensive GMM Functions: Implements functions to compute the log probability density function (PDF) of Gaussian distributions, log posterior probabilities, and the overall training loop.
+- Visualization: Includes functionality to visualize the clustering results, providing an intuitive understanding of how GMMs group data and position their means and variances.
+- Evaluation on Test Data: Demonstrates how to evaluate the trained GMM on a separate test dataset, calculating the mean log-likelihood of the test data under the model.
+
+### Implementation Details
+
+The core of this project is the train_gmm function, which iteratively updates GMM parameters to maximize the log-likelihood of the data. This process involves:
+
+- Parameter Initialization: Depending on the choice, parameters can be initialized randomly or based on the centroids found by KMeans clustering.
+- Log Probability Density Function Calculation: Computes the log PDF of the data points under each Gaussian component.
+- Log Posterior Calculation: Calculates the log posterior probabilities of each component given the data.
+- Optimization: Uses PyTorch's Adam optimizer to adjust the model parameters based on the gradient of the log-likelihood.
+
+### Dataset
+Before running the code, make sure you have a 2D dataset named data2D.npy in your working directory. This dataset is used for both training and validating the clustering models. If you wish to use a different dataset, adjust the load_data function accordingly.
 
 
 
