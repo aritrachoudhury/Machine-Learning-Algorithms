@@ -88,8 +88,26 @@ compare_lr runs multiple experiments for different learning rates, records the a
 <img width="730" alt="image" src="https://github.com/aritrachoudhury/Machine-Learning-Algorithms/assets/97995705/4b0a08db-ced7-47e4-8fe4-353ff161bc52">
 
 # 4. K-Means and Mixture of Gaussian Models (MoG)
-TBA
+## K-Means Clustering Overview
 
+This project demonstrates the KMeans clustering process using both the PyTorch framework for a more "from scratch" approach and the Scikit-learn library for a more straightforward, out-of-the-box solution.
+
+### Features 
+- Load and Split Data: The load_data function loads a 2D dataset and splits it into training and validation sets, preparing the data for clustering.
+- PyTorch Clustering Implementation: Detailed implementation of KMeans using PyTorch, including the steps for initializing cluster centers, assigning data points to the nearest cluster, and updating cluster centers.
+- Scikit-learn Clustering Implementation: Utilizes Scikit-learn's KMeans class to perform clustering, serving as a baseline comparison to the PyTorch implementation.
+- Evaluation and Visualization: Both implementations include functions to evaluate the clustering performance and visualize the results, making it easier to analyze and compare outcomes.
+
+### Dataset
+Before running the code, make sure you have a 2D dataset named data2D.npy in your working directory. This dataset is used for both training and validating the clustering models. If you wish to use a different dataset, adjust the load_data function accordingly.
+
+### Implementation Details
+
+#### PyTorch KMeans
+The PyTorch implementation (train_kmean_torch) involves manually defining the cluster centers and optimizing them using gradient descent with the Adam optimizer. The training process iteratively updates the cluster centers based on the mean squared distance to the data points.
+
+#### Scikit-learn KMeans
+The Scikit-learn version uses the library's KMeans class, which abstracts away the details of initializing centers, assigning clusters, and updating centers. It's a simple yet powerful tool for quick clustering analysis.
 
 
 
